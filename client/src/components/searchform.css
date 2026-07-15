@@ -1,0 +1,67 @@
+.search-form{
+    border: 2px solid rgb(6, 6, 121);
+    border-radius : 10px;
+    background-color : rgb(161, 202, 255);
+    padding : 10px;
+    width: 400px;
+    height: 100px;
+    margin: 30px auto;
+    
+}
+.search-input-container{
+    position:relative;
+    width:250px;
+    display: flex;
+    gap: 7px;
+    margin:auto;
+}
+.search-input{
+    width:95%;
+    padding: 8px 12px;
+    background-color: transparent;
+    border: 2px solid rgb(6, 6, 121);
+    outline: none;
+    color: rgb(46, 46, 46);
+    font-size: 16px;
+    border-radius: 8px;
+    font-family: poppins, sans-serif;
+}
+.search-label{
+    position : absolute;
+    top : 8px;
+    left : 12px;
+    color : rgb(46, 46, 46);
+    pointer-events: none;
+    transition: 0.3s;
+    padding:1.5px;
+    background-color: rgb(161, 202, 255);
+    font-family: poppins, sans-serif;
+}
+input:focus+label,
+input:valid+label{
+    top: -8px;
+    font-size: 12px;
+    color: rgb(6, 6, 121);
+}
+.search-button{
+    background-color: rgb(6, 6, 121);
+    color: rgb(161, 202, 255);
+    border: 2px solid rgb(6, 6, 121);
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100px;
+    font-family: poppins, sans-serif;
+}
+.search-button:hover{
+    background-color:rgb(161, 202, 255);
+    color: rgb(46, 46, 46);
+    border: 2px solid rgb(6, 6, 121);
+
+}
+.error-message{
+    color: red;
+    font-family: poppins, sans-serif;
+    font-size: 16px;
+    text-align: center;
+}

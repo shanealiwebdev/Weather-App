@@ -1,0 +1,46 @@
+.current-weather-container{
+    border: 2px solid rgb(6, 6, 121);
+    border-radius : 10px;
+    background-color : rgb(161, 202, 255);
+    padding : 10px;
+    width: 400px;
+    margin: 30px auto;
+    align-items: center;
+    justify-content: center;
+}
+.city-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2px auto;
+    gap: 10px;
+}
+.city-container h2{
+    font-size: 32px;
+    color: rgb(6, 6, 121);
+    font-family: 'Poppins', sans-serif;
+}
+.weather-icon{
+    width: 100px;
+    height: 100px;
+}
+.weather-details{
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+.weather-details strong{
+    font-size: 16px;
+    color: rgb(6, 6, 121);
+    font-family: 'Poppins', sans-serif;
+}
+.weather-details p{
+    font-size: 14px;
+    color: rgb(46, 46, 46);
+    font-family: poppins, sans-serif;
+}
+.current-weather-container:hover{
+    transform: scale(1.05);
+    transition: 0.3s;
+}
