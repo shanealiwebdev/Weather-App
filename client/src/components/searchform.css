@@ -1,67 +1,56 @@
-.search-form{
-    border: 2px solid rgb(6, 6, 121);
-    border-radius : 10px;
-    background-color : rgb(161, 202, 255);
-    padding : 10px;
-    width: 400px;
-    height: 100px;
+.search-form {
+    background: rgba(20, 20, 20, 0.25);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
     margin: 30px auto;
-    
-}
-.search-input-container{
-    position:relative;
-    width:250px;
     display: flex;
-    gap: 7px;
-    margin:auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .search-input{
-    width:95%;
-    padding: 8px 12px;
-    background-color: transparent;
-    border: 2px solid rgb(6, 6, 121);
+    padding: 10px 20px;
+    border: 1px solid rgb(66, 66, 66);
+    border-radius: 12px;
+    max-width: 350px;
+    width: 100%;
     outline: none;
-    color: rgb(46, 46, 46);
+    background-color: white;
+    color: rgb(66, 66, 66);
+    font-family: poppins, sans-serif;
     font-size: 16px;
-    border-radius: 8px;
-    font-family: poppins, sans-serif;
 }
-.search-label{
-    position : absolute;
-    top : 8px;
-    left : 12px;
-    color : rgb(46, 46, 46);
-    pointer-events: none;
-    transition: 0.3s;
-    padding:1.5px;
-    background-color: rgb(161, 202, 255);
+.search-input::placeholder{
+    color: rgb(66, 66, 66);
     font-family: poppins, sans-serif;
-}
-input:focus+label,
-input:valid+label{
-    top: -8px;
-    font-size: 12px;
-    color: rgb(6, 6, 121);
 }
 .search-button{
-    background-color: rgb(6, 6, 121);
-    color: rgb(161, 202, 255);
-    border: 2px solid rgb(6, 6, 121);
-    padding: 8px 12px;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 100px;
-    font-family: poppins, sans-serif;
-}
-.search-button:hover{
-    background-color:rgb(161, 202, 255);
-    color: rgb(46, 46, 46);
-    border: 2px solid rgb(6, 6, 121);
-
-}
-.error-message{
-    color: red;
+    max-width: 350px;
+    width: 100%;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border: 1px solid white;
+    border-radius: 12px;
+    background-color: rgb(0, 138, 230);
+    color: white;
     font-family: poppins, sans-serif;
     font-size: 16px;
-    text-align: center;
+    cursor: pointer;
+}
+.search-button:hover{
+    background-color: transparent;
+    color: rgb(0, 138, 230);
+    border-color: white;
+}
+.error-message{
+    font-family: poppins, sans-serif;
+    color: red;
+    font-size: 16px;
+    margin-top: 15px;
 }

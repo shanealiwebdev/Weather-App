@@ -1,4 +1,4 @@
-import clear from"..//assissts/clear-day.svg"
+import clear from "..//assissts/clear-day.svg"
 import cloudy from "..//assissts/cloudy.svg"
 import rain from "..//assissts/rain.svg"
 import snow from "..//assissts/snow.svg"
@@ -8,6 +8,8 @@ import mist from "..//assissts/mist.svg"
 import haze from "..//assissts/haze.svg"
 import fog from "..//assissts/fog.svg"
 import "./currentWeather.css"
+import { CircularProgressbar } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
 function CurrentWeather({ weather }) {
     const getWeatherIcon = () => {
         switch (weather.weather) {
@@ -37,23 +39,39 @@ function CurrentWeather({ weather }) {
                 return clear;
         }
     }
-      console.log("CurrentWeather Render:", weather);
+    console.log("CurrentWeather Render:", weather);
+    const maxTemp = 60; // Maximum expected temperature
+    const progress = (weather.feelsLike / maxTemp) * 100;
     return (
-        <div className="current-weather-container">
-            <div className="city-container">
-                <img src={getWeatherIcon()} alt={weather.weather} className="weather-icon" />
-                <h2 className="cityName">{weather.city}</h2>
+            <div className="current-weather-container">
+                <div className="city-container">
+                    <div className="CityIcon">
+                        <img src={getWeatherIcon()} alt={weather.weather} className="weather-icon" />
+                    </div>
+                    <div className="CityWeather">
+                        <h2 className="cityName">{weather.city}</h2>
+                        <p className="temp"><strong>Temperature:</strong> {weather.temperature}°C</p>
+                    </div>
+                </div>
+                <div className="weatherupdate">
+                    <p className="weather"><strong>Weather:</strong> {weather.weather}</p>
+                    <p className="description"><strong>Description:</strong> {weather.description}</p>
+                </div>
+                <div className="weather-details">
+                    <div className="feels-like">
+                        <strong>Feels Like:</strong>
+                        <CircularProgressbar value={progress} text={`${weather.feelsLike}°C`} className="circularprogress"/>
+                    </div>
+                    <div className="humidity">
+                        <strong>Humidity: </strong>
+                        <CircularProgressbar value={weather.humidity} text={`${weather.humidity}%`} className="circularprogress"/>
+                    </div>
+                    <div className="wind-speed">
+                        <strong>Wind Speed:</strong>
+                        <CircularProgressbar value={weather.windspeed} text={`${weather.windspeed} km/h`} className="circularprogress"/>
+                    </div>
+                </div>
             </div>
-            <div className="weather-details">
-              <p className="temp"><strong>Temperature:</strong> {weather.temperature} °C</p>  
-              <p className="feels-like"><strong>Feels Like:</strong> {weather.feelsLike} °C</p>
-              <p className="humidity"><strong>Humidity:</strong> {weather.humidity}%</p>
-              <p className="weather"><strong>Weather:</strong> {weather.weather}</p>
-              <p className="description"><strong>Description:</strong> {weather.description}</p>
-              <p className="wind-speed"><strong>Wind Speed:</strong> {weather.windspeed} km/h</p>
-            </div>
-        </div>
-        
     )
 }
 export default CurrentWeather
